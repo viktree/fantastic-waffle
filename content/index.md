@@ -1,4 +1,0 @@
----
-disqus: false
-type: "page"
----
