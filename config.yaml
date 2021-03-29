@@ -1,0 +1,55 @@
+baseURL: 'https://viktree.netlify.app'
+languageCode: en-us
+
+title: viktree
+theme: ezhil
+
+copyright: 'Copyright (©) 2021, All rights and reserved Vikram Venkataramanan'
+disqusShortname: localhost
+
+pygmentsstyle: solarized-dark
+pygmentscodefences: true
+
+paginate: 10
+summaryLength: 20
+
+favicon: favicon.ico
+
+params:
+  subtitle: >-
+    Glad you could make it! This is a small corner of the internet that [I am](/about) carving out for
+    myself. I [write blog posts](/posts) to clarify my ideas and improve my communication skills.
+  mode: light
+  social:
+    - name: GitHub
+      icon: github
+      url: 'https://github.com/viktree'
+      color: '#999999'
+    - name: Twitter
+      icon: twitter
+      color: '#55ACEE'
+      url: 'https://twitter.com/torvikram'
+    - name: LinkedIn
+      icon: linkedin
+      color: '#0077b5'
+    - name: RSS
+      icon: rss
+      color: '#ff6600'
+      url: /index.xml
+menu:
+  main:
+    - name: home
+      url: /
+      weight: 1
+    - name: my writing
+      url: /posts
+      weight: 2
+    - name: about me
+      url: /about
+      weight: 3
+    - name: email
+      url: mailto:vikram.venkataramanan@mail.utoronto.ca
+      weight: 3
+    - name: Résumé
+      url: 'https://viktree-resume.s3.amazonaws.com/resume-2021.pdf'
+      weight: 5
