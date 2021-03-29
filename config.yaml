@@ -2,7 +2,6 @@ baseURL: 'https://viktree.netlify.app'
 languageCode: en-us
 
 title: viktree
-theme: ezhil
 
 copyright: 'Copyright (©) 2021, All rights and reserved Vikram Venkataramanan'
 disqusShortname: localhost
