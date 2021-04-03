@@ -430,3 +430,11 @@ table th, table td {
         margin-top: 10px;
     }
 }
+
+.nav-social-text-icons a {
+    text-decoration: none;
+}
+
+.site-description {
+    font-family: 'Source Sans Pro';
+}

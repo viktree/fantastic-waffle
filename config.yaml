@@ -21,17 +21,21 @@ params:
   mode: light
   social:
     - name: GitHub
+      short: gh
       icon: github
       url: 'https://github.com/viktree'
       color: '#999999'
     - name: Twitter
+      short: tw
       icon: twitter
       color: '#55ACEE'
       url: 'https://twitter.com/torvikram'
     - name: LinkedIn
+      short: ln
       icon: linkedin
       color: '#0077b5'
     - name: RSS
+      short: rss
       icon: rss
       color: '#ff6600'
       url: /index.xml
@@ -40,7 +44,7 @@ menu:
     - name: home
       url: /
       weight: 1
-    - name: my writing
+    - name: my writings
       url: /posts
       weight: 2
     - name: about me
@@ -50,5 +54,5 @@ menu:
       url: mailto:vikram.venkataramanan@mail.utoronto.ca
       weight: 3
     - name: Résumé
-      url: 'https://viktree-resume.s3.amazonaws.com/resume-2021.pdf'
+      url: '/assets/pdf/resume.pdf'
       weight: 5
