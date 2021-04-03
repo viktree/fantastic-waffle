@@ -4,11 +4,6 @@
     src: url("/fonts/iosevka-slab-regular.woff2");
 }
 
-@font-face {
-    font-family: Raleway;
-    src: url("/fonts/raleway.woff");
-}
-
 body {
     font-family: "source sans pro", sans-serif;
     font-weight: 400;
@@ -104,9 +99,8 @@ a:hover {
 }
 
 h1,h2,h3,h4,h5,h6 {
-    font-family: Raleway,sans-serif;
     line-height: 1.2;
-    color: #A9ACB5;
+    color: #77212E;
     font-weight: 200;
 }
 
