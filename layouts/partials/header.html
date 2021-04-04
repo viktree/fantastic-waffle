@@ -20,22 +20,23 @@
 
 	{{- template "_internal/opengraph.html" . -}}
 	{{- template "_internal/twitter_cards.html" . -}}
-	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+	<link href="{{ .Site.BaseURL }}fonts/SourceSansPro-Regular.ttf" type="font/truetype">
+	<link href="{{ .Site.BaseURL }}fonts/SourceSansPro-Italics.ttf" type="font/truetype">
+	<link href="{{ .Site.BaseURL }}fonts/SourceSansPro-Light.ttf" type="font/truetype">
+	<link href="{{ .Site.BaseURL }}fonts/SourceSansPro-LightItalics.ttf" type="font/truetype">
+	<link href="{{ .Site.BaseURL }}fonts/SourceSansPro-Bold.ttf" type="font/truetype">
+	<link href="{{ .Site.BaseURL }}fonts/SourceSansPro-BoldItalics.ttf" type="font/truetype">
+
 	<link href="{{ .Site.BaseURL }}fonts/iosevka-slab-regular.woff2" type="font/woff2">
-	{{ if .Params.katex}}{{ partial "katex.html" . }}{{ end }}
 
 	<link rel="stylesheet" type="text/css" media="screen" href="{{ .Site.BaseURL }}css/normalize.css" />
 	<link rel="stylesheet" type="text/css" media="screen" href="{{ .Site.BaseURL }}css/main.css" />
-	{{- if isset .Site.Params "customcss" }}
-	<link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}{{ .Site.Params.customCSS }}" />
+
+	{{ if .Params.katex}}
+		{{ partial "katex.html" . }}
+		<link rel="stylesheet" type="text/css" media="screen" href="{{ .Site.BaseURL }}css/katex.min.css" />
 	{{ end }}
-	{{- if or (eq .Site.Params.mode "auto") (eq .Site.Params.mode "dark") -}}
-	<link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}css/dark.css" {{ if eq .Site.Params.mode "auto" }}media="(prefers-color-scheme: dark)"{{ end }} />
-	{{- if isset .Site.Params "customdarkcss" }}
-	<link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}{{ .Site.Params.customDarkCSS }}" {{ if eq .Site.Params.mode "auto" }}media="(prefers-color-scheme: dark)"{{ end }} />
-	{{- end }}
-	{{- end }}
 
 	<script src="{{ .Site.BaseURL }}js/main.js"></script>
 	{{- if isset .Site.Params "customjs" -}}

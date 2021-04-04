@@ -1,5 +1,40 @@
 
 @font-face {
+    font-family: 'Source Sans Pro';
+    font-style: italic;
+    font-weight: 400;
+    src: url(../fonts/SourceSansPro-Italic.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Source Sans Pro';
+    font-style: italic;
+    font-weight: 700;
+    src: url(../fonts/SourceSansPro-BoldItalic.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 300;
+    src: url(../fonts/SourceSansPro-Light.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 400;
+    src: url(../fonts/SourceSansPro-Regular.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 700;
+    src: url(../fonts/SourceSansPro-Bold.ttf) format('truetype');
+}
+
+@font-face {
     font-family: Iosevka Slab;
     src: url("/fonts/iosevka-slab-regular.woff2");
 }
@@ -12,11 +47,6 @@ body {
     font-size: 16px;
 }
 
-/* a, a:hover {
-    color: #a00;
-    text-decoration: none;
-    word-break: break-word;
-} */
 
 a {
     color: #333;
@@ -255,11 +285,6 @@ pre code {
     text-transform: lowercase;
 }
 
-/* .header .site-description {
-    display: flex;
-    justify-content: space-between;
-} */
-
 .header .site-description nav {
     margin: 0;
     padding: 0;
@@ -431,4 +456,9 @@ table th, table td {
 
 .site-description {
     font-family: 'Source Sans Pro';
+    font-weight: 200;
+}
+
+.nav-link {
+    font-family: 'Iosevka Slab';
 }

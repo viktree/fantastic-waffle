@@ -21,6 +21,7 @@
 	</div>
 	<br/>
 	<!-- <hr style="margin-bottom: 10px; border-top: 5px solid black;"> -->
+	<hr style="margin-top: 30px; border-top: 1px dashed black;">
 	<div class="site-description">
 		{{- if isset .Site.Params "subtitle" -}}
 		{{ .Site.Params.Subtitle | markdownify }}
@@ -30,7 +31,7 @@
 		<ul class="flat" style="display:flex; justify-content:space-around;">
 			{{ range .Site.Menus.main }}
 			<li>
-				<a href="{{ .URL }}" style="font-family: Iosevka Slab;">{{ .Name }}</a>
+				<a class="nav-link" href="{{ .URL }}">{{ .Name }}</a>
 			</li>
 			{{ end }}
 		</ul>

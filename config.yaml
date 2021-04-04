@@ -18,7 +18,6 @@ params:
   subtitle: >-
     Glad you could make it! This is a small corner of the internet that [I am](/about) carving out for
     myself. I [write blog posts](/posts) to clarify my ideas and improve my communication skills.
-  mode: light
   social:
     - name: GitHub
       short: gh
