@@ -1,7 +1,6 @@
 
 backend:
-  name: github
-  repo: viktree/fantastic-waffle # Branch to update (optional; defaults to master)
+  name: git-gateway
 
 publish_mode: editorial_workflow
 
