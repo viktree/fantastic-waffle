@@ -1,0 +1,21 @@
+
+backend:
+  name: github
+  repo: viktree/fantastic-waffle # Branch to update (optional; defaults to master)
+
+publish_mode: editorial_workflow
+
+media_folder: "static/images"
+
+collections:
+  - name: post
+    label: Posts
+    folder: posts
+    create: true
+    fields:
+      - {name: title, label: Title}
+      - {name: body, label: Body, widget: markdown}
+      - label: "Draft"
+        name: "draft"
+        widget: "boolean"
+        default: true

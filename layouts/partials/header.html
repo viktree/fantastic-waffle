@@ -40,12 +40,26 @@
 
 	<script src="{{ .Site.BaseURL }}js/main.js"></script>
 	{{- if isset .Site.Params "customjs" -}}
-	{{- range .Site.Params.customJS }}
-	{{- if or (hasPrefix . "http://") (hasPrefix . "https://") }}
-	<script src="{{ . }}"></script>
-	{{- else }}
-	<script src="{{ $.Site.BaseURL }}{{ . }}"></script>
+		{{- range .Site.Params.customJS }}
+			{{- if or (hasPrefix . "http://") (hasPrefix . "https://") }}
+			<script src="{{ . }}"></script>
+			{{- else }}
+			<script src="{{ $.Site.BaseURL }}{{ . }}"></script>
+			{{- end }}
+		{{- end }}
 	{{- end }}
-	{{- end }}
-	{{- end }}
+
+	{{/* Netlify Identity integration. */}}
+	<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+    </script>
 </head>
