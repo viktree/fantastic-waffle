@@ -9,12 +9,22 @@ media_folder: "static/images"
 collections:
   - name: post
     label: Posts
-    folder: posts
+    folder: "content/posts"
     create: true
     fields:
-      - {name: title, label: Title}
-      - {name: body, label: Body, widget: markdown}
+      - name: title
+        label: Title
+      - label: "Publish this page on"
+        name: "date"
+        widget: "datetime"
+      - name: body
+        label: Body
+        widget: markdown
       - label: "Draft"
         name: "draft"
+        widget: "boolean"
+        default: true
+      - label: "Disqus"
+        name: "disqus"
         widget: "boolean"
         default: true
