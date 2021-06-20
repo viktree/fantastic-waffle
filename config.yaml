@@ -36,7 +36,7 @@ params:
     - name: RSS
       short: rss
       icon: rss
-      color: "#E65100"
+      color: "#551f2f"
       url: /index.xml
 menu:
   main:
