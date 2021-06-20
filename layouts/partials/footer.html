@@ -1,13 +1,14 @@
 <div class="footer wrapper">
-	<nav class="nav">
+	<nav class="nav" aria-label="footer-nav">
 		<div>{{ with .Site.Copyright }} {{ . }} {{ end }} | Built with <a href="https://gohugo.io">Hugo</a></div>
 	</nav>
 </div>
 
 <footer>
+	{{ if not .Site.IsServer }}
+	{{ template "_internal/google_analytics_async.html" . }}
+	{{ end }}
+	{{- with .Site.Params.Social -}}
+	{{- end -}}
 </footer>
-{{ if not .Site.IsServer }}
-{{ template "_internal/google_analytics_async.html" . }}
-{{ end }}
-{{- with .Site.Params.Social -}}
-{{- end -}}
+

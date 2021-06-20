@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html>
+
+<div>
 {{ partial "header.html" . }}
 <body>
 	<div class="container wrapper post">
@@ -17,7 +17,7 @@
 		<div class="post-tags">
 			{{ if ne .Type "page" }}
 				{{ if gt .Params.tags 0 }}
-					<nav class="nav tags">
+					<nav class="nav tags" aria-label="nav-tags">
 							<ul class="flat">
 								{{ range .Params.tags }}
 								<li><a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a></li>
@@ -52,4 +52,4 @@
 	</div>
 	{{ partial "footer.html" . }}
 </body>
-</html>
+</div>
