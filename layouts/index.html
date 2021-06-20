@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en-us">
 {{ partial "header.html" . }}
-<body>
+<main>
 	<div class="container wrapper">
 		{{ partial "head.html" . }}
 		{{ with .Content }}{{ . }}{{ end }}
-		<div>
+		<body>
 			<h2 class="recent-posts section"> Recent posts </h2>
 			<div class="posts">
 				{{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
@@ -25,19 +25,18 @@
 				{{ end }}
 				{{ template "partials/paginator.html" . }}
 			</div>
-		</div>
-		<footer>
-			<div class="footer wrapper">
-				<nav class="nav" aria-label="footer-nav">
-					<div>{{ with .Site.Copyright }} {{ . }} {{ end }} | Built with <a href="https://gohugo.io">Hugo</a></div>
-				</nav>
-			</div>
-			{{ if not .Site.IsServer }}
-			{{ template "_internal/google_analytics_async.html" . }}
-			{{ end }}
-			{{- with .Site.Params.Social -}}
-			{{- end -}}
-		</footer>
+		</body>
 	</div>
-</body>
-
+</main>
+<footer>
+	<div class="footer wrapper">
+		<nav class="nav" aria-label="footer-nav">
+			<div>{{ with .Site.Copyright }} {{ . }} {{ end }} | Built with <a href="https://gohugo.io">Hugo</a></div>
+		</nav>
+	</div>
+	{{ if not .Site.IsServer }}
+	{{ template "_internal/google_analytics_async.html" . }}
+	{{ end }}
+	{{- with .Site.Params.Social -}}
+	{{- end -}}
+</footer>
