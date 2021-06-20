@@ -52,6 +52,6 @@ menu:
     - name: email
       url: mailto:vikram.venkataramanan@mail.utoronto.ca
       weight: 3
-    - name: Résumé
+    - name: résumé
       url: "/assets/pdf/resume.pdf"
       weight: 5

@@ -4,7 +4,9 @@
   <main>
     <body class="container wrapper list">
       {{ partial "head.html" . }} 
-      {{ block "content" . }}{{ end }}
+      <div class="content">
+        {{ block "content" . }}{{ end }}
+      </div>
     </body>
   </main>
   {{ partial "footer.html" . }}

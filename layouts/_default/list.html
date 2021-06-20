@@ -1,4 +1,5 @@
 {{ define "content" }}
+<section>
 
 {{ if isset .Data "Term" }}
 <h2>Entries tagged - "{{ .Data.Term }}"</h1>
@@ -20,5 +21,5 @@
   </li>
   {{- end -}} {{- end -}}
 </ul>
-
+</section>
 {{- end -}}
