@@ -1,16 +1,14 @@
 <header>
 	<base href="{{ .Site.BaseURL }}">
 	<div style="display:flex; justify-content: space-between;align-items:baseline;">
+		<h1 class="site-title"><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h1>
 		<div>
-			<h1 class="site-title"><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h1>
-		</div>
-		<div>
-			<nav class="nav social">
+			<nav class="nav social" aria-label="nav-social-in-header">
 				<ul class="flat">
 					{{- range $index, $key := .Site.Params.Social -}}
 					<li>
 						<a href="{{ $key.url }}" title="{{ $key.name }}"
-						  style="color: {{ $key.color }}; text-decoration: none;">
+							style="color: {{ $key.color }}; text-decoration: none; padding-right: 10px">
 							{{ $key.short }}
 						</a>
 					</li>
@@ -19,15 +17,14 @@
 			</nav>
 		</div>
 	</div>
-	<br/>
 	<!-- <hr style="margin-bottom: 10px; border-top: 5px solid black;"> -->
-	<hr style="margin-top: 30px; border-top: 1px dashed black;">
+	<hr style="border-top: 1px dashed black;">
 	<div class="site-description">
 		{{- if isset .Site.Params "subtitle" -}}
 		{{ .Site.Params.Subtitle | markdownify }}
 		{{- end -}}
 	</div>
-	<nav class="nav" >
+	<nav class="nav">
 		<ul class="flat" style="display:flex; justify-content:space-around;">
 			{{ range .Site.Menus.main }}
 			<li>
