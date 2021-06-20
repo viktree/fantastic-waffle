@@ -1,42 +1,23 @@
 <!DOCTYPE html>
 <html lang="en-us">
-{{ partial "header.html" . }}
-<main>
-	<div class="container wrapper">
-		{{ partial "head.html" . }}
-		{{ with .Content }}{{ . }}{{ end }}
-		<body>
-			<h2 class="recent-posts section"> Recent posts </h2>
-			<div class="posts">
-				{{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
-				{{ $paginator := .Paginate (where $pages "Params.hidden" "ne" true) }}
-				{{ range $paginator.Pages }}
-				<div class="post">
-					<div class="meta">{{ dateFormat "Jan 2, 2006" .Date }}{{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}</div>
-					<a class="title" href="{{ .RelPermalink }}">{{.Title}}</a> &mdash;
-					<span class="description">
-						{{ if isset .Params "description" }}
-						{{ .Description }}
-						{{ else }}
-						{{ .Summary }}&hellip;
-						{{ end }}
-					</span>
-				</div>
-				{{ end }}
-				{{ template "partials/paginator.html" . }}
-			</div>
-		</body>
-	</div>
-</main>
-<footer>
-	<div class="footer wrapper">
-		<nav class="nav" aria-label="footer-nav">
-			<div>{{ with .Site.Copyright }} {{ . }} {{ end }} | Built with <a href="https://gohugo.io">Hugo</a></div>
-		</nav>
-	</div>
-	{{ if not .Site.IsServer }}
-	{{ template "_internal/google_analytics_async.html" . }}
-	{{ end }}
-	{{- with .Site.Params.Social -}}
-	{{- end -}}
-</footer>
+  {{ partial "header.html" . }}
+  <main>
+    <div class="container wrapper">
+      {{ partial "head.html" . }} {{ with .Content }}{{ . }}{{ end }}
+      <h2 class="recent-posts section">Recent posts</h2>
+      <ul class="posts">
+        {{ $pages := where .Site.RegularPages "Type" "in"
+        .Site.Params.mainSections }} {{ $paginator := .Paginate (where $pages
+        "Params.hidden" "ne" true) }} {{ range $paginator.Pages }}
+        <li class="post">
+          <a href="{{ .RelPermalink }}">{{.Title}}</a>
+          &mdash;
+          <span class="meta">{{ dateFormat "Jan 2, 2006" .Date }}</span>
+          {{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}
+        </li>
+        {{ end }} {{ template "partials/paginator.html" . }}
+      </ul>
+    </div>
+  </main>
+  {{ partial "footer.html" . }}
+</html>
