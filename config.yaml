@@ -1,9 +1,9 @@
-baseURL: 'https://viktree.netlify.app/'
+baseURL: "https://viktree.netlify.app/"
 languageCode: en-us
 
 title: viktree
 
-copyright: 'Copyright (©) 2021, All rights and reserved Vikram Venkataramanan'
+copyright: "Copyright (©) 2021, All rights and reserved Vikram Venkataramanan"
 disqusShortname: viktree-netlify-com
 
 pygmentsstyle: solarized-dark
@@ -22,21 +22,21 @@ params:
     - name: GitHub
       short: gh
       icon: github
-      url: 'https://github.com/viktree'
-      color: '#999999'
+      url: "https://github.com/viktree"
+      color: "#24292E"
     - name: Twitter
       short: tw
       icon: twitter
-      color: '#55ACEE'
-      url: 'https://twitter.com/torvikram'
+      color: "#01579B"
+      url: "https://twitter.com/torvikram"
     - name: LinkedIn
       short: ln
       icon: linkedin
-      color: '#0077b5'
+      color: "#006064"
     - name: RSS
       short: rss
       icon: rss
-      color: '#ff6600'
+      color: "#E65100"
       url: /index.xml
 menu:
   main:
@@ -53,5 +53,5 @@ menu:
       url: mailto:vikram.venkataramanan@mail.utoronto.ca
       weight: 3
     - name: Résumé
-      url: '/assets/pdf/resume.pdf'
+      url: "/assets/pdf/resume.pdf"
       weight: 5
