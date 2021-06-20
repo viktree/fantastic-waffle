@@ -1,17 +1,38 @@
-<div id="disqus_thread"></div>
-<script type="text/javascript">
-	(function () {
-		// Don't ever inject Disqus on localhost--it creates unwanted
-		// discussions from 'localhost:1313' on your Disqus account...
-		if (window.location.hostname == "localhost")
-			return;
+<section id="comments">
+	<!-- Disable if content type is excluded in config -->
+	{{- if and (isset .Params "type") (in .Site.Params.disableDisqusTypes .Params.type) -}}
+	{{- $.Scratch.Set "isDisqus" false -}}
+	{{- end -}}
 
-		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-		var disqus_shortname = '{{ .Site.DisqusShortname }}';
-		dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-	})();
-</script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
-		Disqus.</a></noscript>
-<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+	<!-- Check if content has flag to enable/disable disqus explicitly -->
+	{{- if and (isset .Params "disqus") (eq .Params.disqus false) -}}
+	{{- $.Scratch.Set "isDisqus" false -}}
+	{{- else if and (isset .Params "disqus") (eq .Params.disqus true) -}}
+	{{- $.Scratch.Set "isDisqus" true -}}
+	{{- end -}}
+
+	<!-- Check if disqus short name is given -->
+	{{ if not .Site.DisqusShortname }}
+	{{- $.Scratch.Set "isDisqus" false -}}
+	{{ end }}
+
+	{{- if eq ($.Scratch.Get "isDisqus") true -}}
+	<div id="disqus_thread"></div>
+	<script type="text/javascript">
+		(function () {
+			// Don't ever inject Disqus on localhost--it creates unwanted
+			// discussions from 'localhost:1313' on your Disqus account...
+			if (window.location.hostname == "localhost")
+				return;
+
+			var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+			var disqus_shortname = '{{ .Site.DisqusShortname }}';
+			dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+			(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+		})();
+	</script>
+	<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+			Disqus.</a></noscript>
+	<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+	{{- end -}}
+</section>

@@ -1,23 +1,20 @@
-<!DOCTYPE html>
-<html lang="en-us">
-  {{ partial "header.html" . }}
-  <main>
-    <div class="container wrapper">
-      {{ partial "head.html" . }} {{ with .Content }}{{ . }}{{ end }}
-      <h2 class="recent-posts section">Recent posts</h2>
-      <ul class="posts">
-        {{ $pages := where .Site.RegularPages "Type" "in"
-        .Site.Params.mainSections }} {{ $paginator := .Paginate (where $pages
-        "Params.hidden" "ne" true) }} {{ range $paginator.Pages }}
-        <li class="post">
-          <a href="{{ .RelPermalink }}">{{.Title}}</a>
-          &mdash;
-          <span class="meta">{{ dateFormat "Jan 2, 2006" .Date }}</span>
-          {{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}
-        </li>
-        {{ end }} {{ template "partials/paginator.html" . }}
-      </ul>
-    </div>
-  </main>
-  {{ partial "footer.html" . }}
-</html>
+{{ define "content" }}
+
+<h2 class="recent-posts section">Recent posts</h2>
+
+<ul class="posts">
+  {{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
+  {{ $paginator := .Paginate (where $pages "Params.hidden" "ne" true) }} {{
+  range $paginator.Pages }}
+  <li class="post">
+    <span>
+      <a href="{{ .RelPermalink }}">{{.Title}}</a>
+      &mdash;
+      <span class="meta">{{ dateFormat "Jan 2, 2006" .Date }}</span>
+      {{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}
+    </span>
+  </li>
+  {{ end }} {{ template "partials/paginator.html" . }}
+</ul>
+
+{{- end -}}

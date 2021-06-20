@@ -1,42 +1,34 @@
 <head>
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	
 	{{- $title := ( .Title ) -}}
 	{{- $siteTitle := ( .Site.Title ) -}}
+
 	{{- if .IsHome -}}
-	<title>{{ $siteTitle }} {{ if isset .Site.Params "subtitle" }}- {{ .Site.Params.Subtitle }}{{ end }} </title>
+		<title>{{ $siteTitle }} {{ if isset .Site.Params "subtitle" }}- {{ .Site.Params.Subtitle }}{{ end }} </title>
 	{{- else -}}
-	<title>{{ $title }} - {{ $siteTitle }}</title>
+		<title>{{ $title }} - {{ $siteTitle }}</title>
 	{{- end -}}
 
 	{{- if isset .Site.Params "favicon" -}}
-	<link rel="icon" type="image/png" href={{ .Site.Params.favicon }} />
+		<link rel="icon" type="image/png" href={{ .Site.Params.favicon }} />
 	{{- end -}}
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	{{ with .OutputFormats.Get "rss" -}}
-	{{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+		{{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
 	{{ end -}}
 
 	{{- template "_internal/opengraph.html" . -}}
 	{{- template "_internal/twitter_cards.html" . -}}
 
-	<link href="{{ .Site.BaseURL }}fonts/SourceSansPro-Regular.ttf" type="font/truetype">
-	<link href="{{ .Site.BaseURL }}fonts/SourceSansPro-Italics.ttf" type="font/truetype">
-	<link href="{{ .Site.BaseURL }}fonts/SourceSansPro-Light.ttf" type="font/truetype">
-	<link href="{{ .Site.BaseURL }}fonts/SourceSansPro-LightItalics.ttf" type="font/truetype">
-	<link href="{{ .Site.BaseURL }}fonts/SourceSansPro-Bold.ttf" type="font/truetype">
-	<link href="{{ .Site.BaseURL }}fonts/SourceSansPro-BoldItalics.ttf" type="font/truetype">
-
-	<link href="{{ .Site.BaseURL }}fonts/iosevka-slab-regular.woff2" type="font/woff2">
+	{{ partial "fonts.html" . }}
 
 	<link rel="stylesheet" type="text/css" media="screen" href="{{ .Site.BaseURL }}css/normalize.css" />
 	<link rel="stylesheet" type="text/css" media="screen" href="{{ .Site.BaseURL }}css/main.css" />
 
-	{{ if .Params.katex}}
-		{{ partial "katex.html" . }}
-		<link rel="stylesheet" type="text/css" media="screen" href="{{ .Site.BaseURL }}css/katex.min.css" />
-	{{ end }}
+	{{ partial "katex.html" . }}	
 
 	<script src="{{ .Site.BaseURL }}js/main.js"></script>
 	{{- if isset .Site.Params "customjs" -}}
@@ -49,17 +41,5 @@
 		{{- end }}
 	{{- end }}
 
-	{{/* Netlify Identity integration. */}}
-	<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-    <script>
-      if (window.netlifyIdentity) {
-        window.netlifyIdentity.on("init", user => {
-          if (!user) {
-            window.netlifyIdentity.on("login", () => {
-              document.location.href = "/admin/";
-            });
-          }
-        });
-      }
-    </script>
+	{{ partial "netlify.html" . }}
 </head>
