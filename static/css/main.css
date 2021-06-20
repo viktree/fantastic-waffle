@@ -268,11 +268,6 @@ pre code {
   font-size: 1.125rem;
 }
 
-.header nav {
-  margin-top: 20px;
-  /* border-top: 1px solid #f4f4f4; */
-}
-
 .header nav ul,
 .header nav li {
   margin: 0;
@@ -463,4 +458,8 @@ table td {
 
 footer {
   color: #000000;
+}
+
+.nav {
+  padding: 20px !important;
 }
