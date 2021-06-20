@@ -460,12 +460,3 @@ table td {
 .nav-link {
   font-family: "Iosevka Slab";
 }
-
-.section .section-header {
-  font-size: 0.75rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  color: black !important;
-  margin-bottom: 20px;
-  letter-spacing: 1px;
-}

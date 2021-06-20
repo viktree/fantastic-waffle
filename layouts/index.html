@@ -3,13 +3,10 @@
 {{ partial "header.html" . }}
 <body>
 	<div class="container wrapper">
-	{{ partial "head.html" . }}
-	{{ with .Content }}{{ . }}{{ end }}
-
-		<div class="recent-posts section">
-			<h2 class="section-header">
-				Recent posts
-			</h2>
+		{{ partial "head.html" . }}
+		{{ with .Content }}{{ . }}{{ end }}
+		<div>
+			<h2 class="recent-posts section"> Recent posts </h2>
 			<div class="posts">
 				{{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
 				{{ $paginator := .Paginate (where $pages "Params.hidden" "ne" true) }}
@@ -29,7 +26,7 @@
 				{{ template "partials/paginator.html" . }}
 			</div>
 		</div>
+		{{ partial "footer.html" . }}
 	</div>
-	{{ partial "footer.html" . }}
 </body>
-</div>
+
