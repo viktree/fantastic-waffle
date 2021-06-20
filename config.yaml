@@ -16,27 +16,27 @@ favicon: favicon.ico
 
 params:
   subtitle: >-
-    Glad you could make it! This is a small corner of the internet that [I am](/about) carving out for
-    myself. I [write blog posts](/posts) to clarify my ideas and improve my communication skills.
+    Glad you could make it! This is a small corner of the internet that I am carving out for
+    myself. I write blog posts to clarify my ideas and improve my communication skills.
   social:
     - name: GitHub
-      short: gh
+      short: "gh"
       icon: github
       url: "https://github.com/viktree"
-      color: "#24292E"
+      color: "#999999" #"#24292E"
     - name: Twitter
-      short: tw
+      short: "tw"
       icon: twitter
-      color: "#01579B"
+      color: "#55ACEE" # "#01579B"
       url: "https://twitter.com/torvikram"
     - name: LinkedIn
-      short: ln
+      short: "ln"
       icon: linkedin
-      color: "#006064"
+      color: "#0077b5" #"#006064"
     - name: RSS
-      short: rss
+      short: "rss "
       icon: rss
-      color: "#551f2f"
+      color: "#ff6600" #"#551f2f"
       url: /index.xml
 menu:
   main:
@@ -49,9 +49,9 @@ menu:
     - name: about me
       url: /about
       weight: 3
-    - name: email
-      url: mailto:vikram.venkataramanan@mail.utoronto.ca
-      weight: 3
-    - name: résumé
-      url: "/assets/pdf/resume.pdf"
-      weight: 5
+    # - name: email
+    #   url: mailto:vikram.venkataramanan@mail.utoronto.ca
+    #   weight: 3
+    # - name: résumé
+    #   url: "/assets/pdf/resume.pdf"
+    #   weight: 5

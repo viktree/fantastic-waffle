@@ -8,7 +8,8 @@
 					{{- range $index, $key := .Site.Params.Social -}}
 					<li>
 						<a href="{{ $key.url }}" title="{{ $key.name }}"
-							style="color: {{ $key.color }}; text-decoration: none; padding-right: 10px">
+							class="social-icon"
+							style="color: {{ $key.color }};">
 							{{ $key.short }}
 						</a>
 					</li>

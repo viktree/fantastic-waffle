@@ -1,10 +1,12 @@
 {{ define "content" }}
 <section>
 
+<h1 class="page-title">My Writings</h1>
+
 {{ if isset .Data "Term" }}
-<h2>Entries tagged - "{{ .Data.Term }}"</h1>
+<h1>Entries tagged - "{{ .Data.Term }}"</h1>
 {{ else }}
-<h2 class="page-title">All articles</h2>
+<h2 class="page-title">Blog Posts</h2>
 {{ end }} {{ with .Content }}{{ . }}{{ end }}
 
 <ul class="posts">
