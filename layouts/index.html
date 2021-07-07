@@ -1,25 +1,3 @@
 {{ define "content" }}
 <section></section>
-<!-- <section id="main">
-
-<h1 class="recent-posts section">Some Recent posts</h1>
-
-<ul class="posts">
-  {{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
-  {{ $paginator := .Paginate (where $pages "Params.hidden" "ne" true) }} {{
-  range $paginator.Pages }}
-  <li class="post">
-    <span>
-      <a href="{{ .RelPermalink }}">{{.Title}}</a>
-      &mdash;
-      <span class="meta">
-        {{ dateFormat "Jan 2, 2006" .Date }}
-        {{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}
-      </span>
-    </span>
-  </li>
-  {{ end }} {{ template "partials/paginator.html" . }}
-</ul>
-
-</section> -->
 {{- end -}}
